@@ -1,22 +1,21 @@
-import { Container } from 'react-bootstrap'
-import { useState } from 'react'
-import AddNewBlog from '../../components/AddNewBlog/AddNewBlog'
+import { Container } from "react-bootstrap";
+import { useState } from "react";
+// import AddNewBlog from '../../components/AddNewBlog/AddNewBlog'
 
 const Blog = () => {
   const [showModalNewBlog, setShowModalNewBlog] = useState(false);
 
   return (
     <Container>
-        <h1>Blogs</h1>
-        
-        <div className="main-blog">
+      <h1>Blogs</h1>
+
+      {/* <div className="main-blog">
             <AddNewBlog 
             show = {showModalNewBlog}
             setShow = {setShowModalNewBlog}/>
-        </div>
-
+        </div> */}
     </Container>
-  )
-}
+  );
+};
 
 export default Blog;

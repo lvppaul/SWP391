@@ -11,15 +11,15 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Shop from "./pages/Shop/Shop";
 import NotPage from "./pages/NotPage/NotPage";
-import Pond from './pages/Pond/Pond';
-import AdminHome from './pages/Admin/Home/AdminHome';
+import Pond from "./pages/Pond/Pond";
+import AdminHome from "./pages/Admin/Home/AdminHome";
 import TableUser from "./components/TableUser/TableUser";
 import SaltCalculator from "./pages/SaltCalculator/SaltCalculator";
 import FoodCalculator from "./pages/FoodCalculator/FoodCalculator";
-import Product from './pages/Product/Product';
+import Product from "./pages/Product/Product";
 import PondDetail from "./pages/PondDetail/PondDetail";
 import KoiDetail from "./pages/KoiDetails/KoiDetail";
-import AddNewBlog from "./components/AddNewBlog/AddNewBlog";
+// import AddNewBlog from "./components/AddNewBlog/AddNewBlog";
 import Blog from "./pages/Blog/Blog";
 import AuthProvider from "./pages/Login/AuthProvider";
 import ProtectedRoute from "./components/ProtectedRoute"; // Import the ProtectedRoute component
@@ -42,20 +42,69 @@ root.render(
             <Route path="*" element={<NotPage />} />
             <Route path="ponddetail" element={<PondDetail />} />
             <Route path="koidetail" element={<KoiDetail />} />
-            <Route path="addnewblog" element={<AddNewBlog />} />
+            <Route />
           </Route>
 
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="/admin/" element={<ProtectedRoute requiredRole="admin"><AdminHome /></ProtectedRoute>}>
+          <Route
+            path="/admin/"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminHome />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<h1>Report</h1>} />
             <Route path="report" element={<h1>Report</h1>} />
-            <Route path="usermanage" element={<ProtectedRoute requiredRole="admin"><TableUser /></ProtectedRoute>} />
-            <Route path="shopadmin" element={<ProtectedRoute requiredRole="admin"><h1>Shop</h1></ProtectedRoute>} />
-            <Route path="products" element={<ProtectedRoute requiredRole="admin"><h1>Products</h1></ProtectedRoute>} />
-            <Route path="catagories" element={<ProtectedRoute requiredRole="admin"><h1>Categories</h1></ProtectedRoute>} />
-            <Route path="setting" element={<ProtectedRoute requiredRole="admin"><h1>Setting</h1></ProtectedRoute>} />
-            <Route path="feedback" element={<ProtectedRoute requiredRole="admin"><h1>Feedback</h1></ProtectedRoute>} />
+            <Route
+              path="usermanage"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <TableUser />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="shopadmin"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <h1>Shop</h1>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="products"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <h1>Products</h1>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="catagories"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <h1>Categories</h1>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="setting"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <h1>Setting</h1>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="feedback"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <h1>Feedback</h1>
+                </ProtectedRoute>
+              }
+            />
           </Route>
         </Routes>
       </AuthProvider>
